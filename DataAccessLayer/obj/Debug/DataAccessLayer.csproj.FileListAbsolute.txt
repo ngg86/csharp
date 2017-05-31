@@ -1,0 +1,8 @@
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\bin\Debug\NorthwindClasses.dll
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\bin\Debug\NorthwindClasses.pdb
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
