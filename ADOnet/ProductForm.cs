@@ -34,6 +34,24 @@ namespace ADOnet
         {
             dgvProducts.DataSource = ProductsDAL.GetProducts();
         }
+
+        private void btnDeleteForm_Click(object sender, EventArgs e)
+        {
+            DeleteForm del = new DeleteForm();
+            del.Show();
+        }
+
+        /* private void ShowInsertForm()
+         {
+             ProductInvoer prodinv = new ProductInvoer();
+             prodinv.ProductToegevoegd += ProductInserted;
+             prodinv.Show();
+         }
+
+         private void ProductInserted(object sender, EventArgs e)
+         {
+             dgvProducts.DataSource = ProductsDAL.GetProducts();
+         }*/
     }
 
 

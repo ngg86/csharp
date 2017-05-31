@@ -50,6 +50,8 @@
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnVoegProduct = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.categoriesTableAdapter1 = new ADOnet.NorthwindDataSetTableAdapters.CategoriesTableAdapter();
+            this.btnDeleteForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
@@ -235,17 +237,32 @@
             // 
             this.btnRefresh.Location = new System.Drawing.Point(522, 0);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(73, 21);
+            this.btnRefresh.Size = new System.Drawing.Size(83, 23);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // categoriesTableAdapter1
+            // 
+            this.categoriesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnDeleteForm
+            // 
+            this.btnDeleteForm.Location = new System.Drawing.Point(279, 0);
+            this.btnDeleteForm.Name = "btnDeleteForm";
+            this.btnDeleteForm.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteForm.TabIndex = 5;
+            this.btnDeleteForm.Text = "Delete";
+            this.btnDeleteForm.UseVisualStyleBackColor = true;
+            this.btnDeleteForm.Click += new System.EventHandler(this.btnDeleteForm_Click);
             // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 433);
+            this.Controls.Add(this.btnDeleteForm);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnVoegProduct);
             this.Controls.Add(this.dgvProducts);
@@ -286,6 +303,8 @@
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button btnVoegProduct;
         private System.Windows.Forms.Button btnRefresh;
+        private NorthwindDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter1;
+        private System.Windows.Forms.Button btnDeleteForm;
     }
 }
 

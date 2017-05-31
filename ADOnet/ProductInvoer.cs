@@ -20,15 +20,43 @@ namespace ADOnet
             InitializeComponent();
         }
 
+        public EventHandler ProductToegevoegd;
+
+        public void ProductIsToegevoegd(EventArgs e)
+        {
+            if(ProductToegevoegd != null)
+            {
+                ProductToegevoegd(this, e);
+            }
+        }
+
+        private void InsertProduct()
+        {
+            if (string.IsNullOrEmpty(tbPNameInvoer.Text))
+                return;
+
+            Products product = new Products();
+            product.productName = tbPNameInvoer.Text;
+            product.discontinued = cbDiscontinued.Checked;
+            int productID = ProductsDAL.InsertProduct(product);
+            if(productID!=0)
+            {
+                product.productID = productID;
+                ProductIsToegevoegd(EventArgs.Empty);
+                string message = string.Format("Product met ID {0} toegevoegd.", product.productID);
+                MessageBox.Show(message);
+            }
+            else
+            {
+                string message = string.Format("Geen product toegevoegd.");
+                MessageBox.Show(message);
+            }
+        }
+
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            Products product = new Products();
-            string pName = tbPNameInvoer.Text;
-            bool disContinued = cbDiscontinued.Checked;
+            InsertProduct();
             
-            product.productName = pName;
-            product.discontinued = disContinued;
-            ProductsDAL.InsertProduct(product);           
             
         }
     }

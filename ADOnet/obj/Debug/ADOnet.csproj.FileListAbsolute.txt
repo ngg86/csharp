@@ -12,3 +12,4 @@ C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\ADOnet\bin\Debug\Nor
 C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\ADOnet\obj\Debug\ADOnet.exe
 C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\ADOnet\obj\Debug\ADOnet.pdb
 C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\ADOnet\obj\Debug\ADOnet.ProductInvoer.resources
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\ADOnet\obj\Debug\ADOnet.DeleteForm.resources
