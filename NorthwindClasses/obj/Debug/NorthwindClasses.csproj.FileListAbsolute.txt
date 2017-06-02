@@ -1,0 +1,6 @@
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\NorthwindClasses\obj\Debug\NorthwindClasses.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\NorthwindClasses\bin\Debug\NorthwindClasses.dll
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\NorthwindClasses\bin\Debug\NorthwindClasses.pdb
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\NorthwindClasses\obj\Debug\NorthwindClasses.dll
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\NorthwindClasses\obj\Debug\NorthwindClasses.pdb
+C:\Users\Nick\Dropbox\134405.nick.greenslade\C_Sharp\ADOnet\NorthwindClasses\bin\Debug\NorthwindClasses.dll.config
