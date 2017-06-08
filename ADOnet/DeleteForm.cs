@@ -29,15 +29,19 @@ namespace ADOnet
         {
             SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-698P2MHO\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
             SqlCommand cmd = new SqlCommand("SELECT ProductID, ProductName FROM Products", con);
-         
+
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ProductID", typeof(int));
+            dt.Columns.Add("ProductName", typeof(string));
+            dt.Load(reader);
             try
-            {                
-                while (reader.Read())
-                {
-                    cbDelProduct.Items.Add(reader[1]);
-                }
+            {
+                cbDelProduct.ValueMember = "ProductID";
+                cbDelProduct.DisplayMember = "ProductName";
+                cbDelProduct.DataSource = dt;
+                cbDelProduct.Items.Add(dt);
                 reader.Close();
             }
             catch (Exception)
@@ -48,37 +52,51 @@ namespace ADOnet
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            
+
             Products product = new Products();
-            //invalid cast?
-            product.productID = Convert.ToInt32((Products)cbDelProduct.SelectedItem);
-            product.productName = cbDelProduct.SelectedText;
+
+
+            product.productID = (int)cbDelProduct.SelectedValue;
             DeleteProduct(product);
             
+
         }
 
         public static int DeleteProduct(Products product)
-        {
-            //aantal gwiste rijen
-            int i = 0;
-            
-                       
-            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-698P2MHO\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("DELETE FROM Products WHERE ProductID = @productID", con);
-            SqlCommand scmd = new SqlCommand("SELECT COUNT ProductID FROM [OrderDetails] WHERE ProductID = @ProductID", con);
-            cmd.Parameters.AddWithValue("@productID", product.productID);
-            scmd.Parameters.AddWithValue("@productID", product.productID);
-            con.Open();
-            scmd.ExecuteScalar();
-            if (product.productID == 0)
-            {                
-                cmd.ExecuteScalar();
-                i++;
+        {            
+            int rowsRemoved = 0;
+            if (product != null)
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-698P2MHO\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True");
+                SqlCommand checkcmd = new SqlCommand("SELECT COUNT ProductID FROM Order Details WHERE ProductID = @productID", con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM Products WHERE ProductID = @productID", con);
+                cmd.Parameters.AddWithValue("@productID", product.productID);
+                checkcmd.Parameters.AddWithValue("@productID", product.productID);
+
+                try
+                {
+                    con.Open();
+                    int orderId = (int)checkcmd.ExecuteScalar();
+                    if (orderId == 0)
+                    {
+                        rowsRemoved = (int)cmd.ExecuteNonQuery();
+                        return rowsRemoved;
+                    }
+                    else
+                    {
+                        string message = "Kan niet verwijderd worden, er staan nog orders voor dit product.";
+                        MessageBox.Show(message);
+                        return rowsRemoved;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Write(ex.Message);
+                }
+
+                return rowsRemoved;
             }
-            MessageBox.Show(i.ToString());
-
-
-            return i;
+            return rowsRemoved;
         }
     }
 }
